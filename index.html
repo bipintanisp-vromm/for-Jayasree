@@ -1,54 +1,191 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>A Little Something</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Something for Jayasree</title>
+
 <style>
-*{box-sizing:border-box}
-body{margin:0;background:#f8f0ed;color:#574348;font-family:Georgia,serif}
-.page{min-height:100vh;padding:28px 23px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
-.eyebrow{font:10px Arial,sans-serif;letter-spacing:4px;color:#a27b80;text-transform:uppercase}
-h1{font-weight:normal;font-size:clamp(35px,9vw,52px);line-height:1.22;margin:27px 0 18px}
-p{font-size:16px;line-height:1.9;color:#846c70}
-.line{width:42px;height:1px;background:#d6b7b5;margin:22px auto}
-button,a{font:12px Arial,sans-serif;letter-spacing:1px;color:#76575d;border:1px solid #d9c0bd;background:transparent;padding:15px 20px;text-decoration:none;cursor:pointer}
-.note{max-width:350px}
-#music{display:none;background:#f1e4e1}
-.disc{width:100px;height:100px;border:1px solid #cba9a8;border-radius:50%;display:grid;place-items:center;margin:28px;font-size:35px}
-footer{position:absolute;bottom:18px;font:10px Arial,sans-serif;letter-spacing:2px;color:#ad9292}
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #f8f0ed;
+  color: #60494f;
+  font-family: Georgia, serif;
+  text-align: center;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 65px 24px 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#music { display: none; }
+
+.eyebrow {
+  font: 12px Arial, sans-serif;
+  letter-spacing: 5px;
+  color: #aa8087;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: clamp(36px, 9vw, 54px);
+  font-weight: normal;
+  line-height: 1.18;
+  margin: 35px 0 20px;
+}
+
+p {
+  max-width: 340px;
+  font-size: 17px;
+  line-height: 1.9;
+  color: #846c70;
+}
+
+.decor {
+  font-size: 22px;
+  letter-spacing: 7px;
+  margin: 24px 0;
+}
+
+button, a {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 17px 24px;
+  border: 1px solid #d9b9b7;
+  background: transparent;
+  color: #785960;
+  font: 13px Arial, sans-serif;
+  letter-spacing: 2px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button:active, a:active {
+  background: #f0e0dc;
+}
+
+footer {
+  margin-top: 65px;
+  font: 11px Arial, sans-serif;
+  letter-spacing: 3px;
+  color: #b09194;
+}
+
+#music .disc {
+  width: 105px;
+  height: 105px;
+  border: 1px solid #d5b0b2;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin: 25px;
+  font-size: 38px;
+  background: #f3e3df;
+}
+
+#music.playing .disc {
+  animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.small {
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
 </style>
 </head>
+
 <body>
+
 <section class="page" id="home">
-<div class="eyebrow">A little something for you</div>
-<div class="note">
-<h1>Some things are better left unspoken.</h1>
-<p>But sometimes, a song says it just right.</p>
-</div>
-<div class="line"></div>
-<button onclick="showMusic()">A SONG FOR YOU ↗</button>
-<footer>MADE WITH CARE · 01</footer>
+  <div class="eyebrow">🌷 A little something for you ✨</div>
+
+  <h1>Some things are<br>
+  better left<br>
+  unspoken.</h1>
+
+  <p>But sometimes, a song says it just right. 🦋</p>
+
+  <div class="decor">✧ 🌸 ✧</div>
+
+  <button onclick="showMusic()">
+    A SONG FOR YOU ♡
+  </button>
+
+  <footer>MADE WITH CARE · 01</footer>
 </section>
+
 <section class="page" id="music">
-<div class="eyebrow">A little note</div>
-<h1 style="font-size:38px">For your eyes,<br>and the songs they inspire.</h1>
-<div class="disc" onclick="playSong()" id="disc">♫</div>
-<p class="note">Somehow, this is how my earphones sound whenever I see your eyes.</p>
-<p id="status" style="font-size:12px">Tap the music note to listen.</p>
-<button onclick="showHome()">← BACK TO THE NOTE</button>
-<footer>MADE WITH CARE · 02</footer>
+  <div class="eyebrow">🎧 A little melody for you</div>
+
+  <h1>For you,<br>Jayasree. 🦋</h1>
+
+  <div class="disc">♫</div>
+
+  <div class="decor">✨ 🦋 ✨</div>
+
+  <p>
+    I don't know what it is about you, but you have this
+    way of making ordinary moments feel a little more special.
+    Maybe it's your smile, your eyes, or simply the way
+    you carry yourself. 🌸
+  </p>
+
+  <p>
+    There's something about you that's hard not to admire,
+    even in the smallest moments. And honestly, I think
+    that's a pretty lovely thing about someone. 🦋✨
+  </p>
+
+  <p class="small">
+    Some feelings are easier to share through a song. ♡
+  </p>
+
+  <button onclick="playMusic()">♫ TAP TO PLAY</button>
+  <p id="status" class="small">A little melody, just for you ✨</p>
+
+  <button onclick="showHome()">← BACK</button>
+
+  <footer>MADE WITH A LITTLE EXTRA CARE · 02</footer>
 </section>
-<audio id="song" loop preload="none"></audio>
+
+<audio id="song" preload="none">
+  <source src="" type="audio/mpeg">
+</audio>
+
 <script>
-function showMusic(){home.style.display='none';music.style.display='flex';window.scrollTo(0,0)}
-function showHome(){song.pause();music.style.display='none';home.style.display='flex';window.scrollTo(0,0)}
-function playSong(){
-if(!song.src){status.textContent='Add your chosen instrumental audio to enable playback.';return}
-if(song.paused){song.play();disc.textContent='Ⅱ';status.textContent='Now playing'}
-else{song.pause();disc.textContent='♫';status.textContent='Paused'}
+function showMusic() {
+  document.getElementById('home').style.display = 'none';
+  document.getElementById('music').style.display = 'flex';
+  window.scrollTo(0, 0);
+}
+
+function showHome() {
+  document.getElementById('song').pause();
+  document.getElementById('music').classList.remove('playing');
+  document.getElementById('music').style.display = 'none';
+  document.getElementById('home').style.display = 'flex';
+  window.scrollTo(0, 0);
+}
+
+function playMusic() {
+  document.getElementById('status').textContent =
+    'Add your song link to the code first 🎶';
 }
 </script>
+
 </body>
 </html>
