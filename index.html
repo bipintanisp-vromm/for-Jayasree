@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Little Something</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f8f0ed;color:#574348;font-family:Georgia,serif}
+.page{min-height:100vh;padding:28px 23px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.eyebrow{font:10px Arial,sans-serif;letter-spacing:4px;color:#a27b80;text-transform:uppercase}
+h1{font-weight:normal;font-size:clamp(35px,9vw,52px);line-height:1.22;margin:27px 0 18px}
+p{font-size:16px;line-height:1.9;color:#846c70}
+.line{width:42px;height:1px;background:#d6b7b5;margin:22px auto}
+button,a{font:12px Arial,sans-serif;letter-spacing:1px;color:#76575d;border:1px solid #d9c0bd;background:transparent;padding:15px 20px;text-decoration:none;cursor:pointer}
+.note{max-width:350px}
+#music{display:none;background:#f1e4e1}
+.disc{width:100px;height:100px;border:1px solid #cba9a8;border-radius:50%;display:grid;place-items:center;margin:28px;font-size:35px}
+footer{position:absolute;bottom:18px;font:10px Arial,sans-serif;letter-spacing:2px;color:#ad9292}
+</style>
+</head>
+<body>
+<section class="page" id="home">
+<div class="eyebrow">A little something for you</div>
+<div class="note">
+<h1>Some things are better left unspoken.</h1>
+<p>But sometimes, a song says it just right.</p>
+</div>
+<div class="line"></div>
+<button onclick="showMusic()">A SONG FOR YOU ↗</button>
+<footer>MADE WITH CARE · 01</footer>
+</section>
+<section class="page" id="music">
+<div class="eyebrow">A little note</div>
+<h1 style="font-size:38px">For your eyes,<br>and the songs they inspire.</h1>
+<div class="disc" onclick="playSong()" id="disc">♫</div>
+<p class="note">Somehow, this is how my earphones sound whenever I see your eyes.</p>
+<p id="status" style="font-size:12px">Tap the music note to listen.</p>
+<button onclick="showHome()">← BACK TO THE NOTE</button>
+<footer>MADE WITH CARE · 02</footer>
+</section>
+<audio id="song" loop preload="none"></audio>
+<script>
+function showMusic(){home.style.display='none';music.style.display='flex';window.scrollTo(0,0)}
+function showHome(){song.pause();music.style.display='none';home.style.display='flex';window.scrollTo(0,0)}
+function playSong(){
+if(!song.src){status.textContent='Add your chosen instrumental audio to enable playback.';return}
+if(song.paused){song.play();disc.textContent='Ⅱ';status.textContent='Now playing'}
+else{song.pause();disc.textContent='♫';status.textContent='Paused'}
+}
+</script>
+</body>
+</html>
