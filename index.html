@@ -1,22 +1,21 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#e9c9f3">
-<title>A Little Something ♡</title>
+<meta name="theme-color" content="#f3d5f8">
+<title>A Little Something for Jayasree ♡</title>
 
 <style>
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 :root {
-  --pink: #f8cde3;
-  --purple: #d8c9fa;
-  --ink: #765477;
-  --soft-ink: #987b9b;
+  --ink: #805786;
+  --muted: #987b9b;
+  --pink: #f4c5df;
+  --purple: #d6c5fa;
 }
 
 body {
@@ -27,8 +26,9 @@ body {
 }
 
 .page {
+  min-height: 100vh;
   min-height: 100svh;
-  padding: 32px 20px;
+  padding: 30px 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,27 +36,19 @@ body {
   overflow: hidden;
   isolation: isolate;
   background: linear-gradient(
-    125deg,
-    #ffd8e9,
-    #f3d5f8,
-    #d6d0ff,
-    #ffe0ed,
-    #e4d5ff
+    125deg, #ffd8e9, #f3d5f8, #d6d0ff, #ffe0ed, #e4d5ff
   );
   background-size: 350% 350%;
   animation: sky 18s ease infinite;
 }
 
-#music {
-  display: none;
-}
+.hidden { display: none !important; }
 
 @keyframes sky {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
 }
 
-/* Soft glowing clouds */
 .glow {
   position: absolute;
   width: 230px;
@@ -65,6 +57,7 @@ body {
   filter: blur(55px);
   opacity: .52;
   z-index: -1;
+  pointer-events: none;
   animation: floatGlow 10s ease-in-out infinite alternate;
 }
 
@@ -82,11 +75,10 @@ body {
 }
 
 @keyframes floatGlow {
-  from { transform: translate(0, 0) scale(.9); }
-  to { transform: translate(35px, 30px) scale(1.2); }
+  from { transform: translate(0,0) scale(.9); }
+  to { transform: translate(35px,30px) scale(1.2); }
 }
 
-/* Little twinkling details */
 .sparkle {
   position: absolute;
   color: #fffaff;
@@ -103,11 +95,10 @@ body {
 .s6 { top: 34%; left: 7%; font-size: 12px; animation-delay: .7s; }
 
 @keyframes twinkle {
-  0%, 100% { opacity: .25; transform: scale(.8); }
+  0%,100% { opacity: .25; transform: scale(.8); }
   50% { opacity: 1; transform: scale(1.25); }
 }
 
-/* Soft falling petals */
 .petal {
   position: absolute;
   top: -30px;
@@ -123,25 +114,25 @@ body {
 .p4 { left: 88%; animation-delay: -10s; }
 
 @keyframes fall {
-  0% { transform: translate(0, -20px) rotate(0deg); }
-  50% { transform: translate(25px, 50vh) rotate(100deg); }
-  100% { transform: translate(-15px, 110vh) rotate(220deg); }
+  0% { transform: translate(0,-20px) rotate(0deg); }
+  50% { transform: translate(25px,50vh) rotate(100deg); }
+  100% { transform: translate(-15px,110vh) rotate(220deg); }
 }
 
-/* Main frosted glass card */
 .card {
   width: 100%;
   max-width: 410px;
   padding: 34px 23px;
   border-radius: 27px;
   border: 1px solid #ffffffc9;
-  background: #fff9fbd9;
-  box-shadow:
-    0 18px 55px #9c70a52b,
-    inset 0 0 22px #ffffff55;
+  background: #fff9fbdf;
+  box-shadow: 0 18px 55px #9c70a52b,
+              inset 0 0 22px #ffffff55;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   animation: enter 1.1s ease both;
+  position: relative;
+  z-index: 1;
 }
 
 @keyframes enter {
@@ -158,17 +149,17 @@ body {
 
 h1 {
   margin: 23px 0 17px;
-  font-size: clamp(33px, 8.5vw, 43px);
+  font-size: clamp(32px, 8vw, 43px);
   font-weight: normal;
-  line-height: 1.28;
+  line-height: 1.3;
   color: #805786;
 }
 
 p {
   margin: 13px 0;
   font-size: 15px;
-  line-height: 1.85;
-  color: var(--soft-ink);
+  line-height: 1.9;
+  color: var(--muted);
 }
 
 .divider {
@@ -185,177 +176,426 @@ p {
   left: 50%;
   top: 50%;
   padding: 0 7px;
-  background: #fff9fbd9;
-  transform: translate(-50%, -50%);
+  background: #fff9fb;
+  transform: translate(-50%,-50%);
   color: #bc8fbd;
   font-size: 13px;
 }
 
-/* Buttons */
 button {
-  padding: 15px 23px;
+  padding: 14px 22px;
   margin-top: 17px;
-  border: 1px solid #d4a5d7;
-  border-radius: 50px;
-  background: #fff9ff;
+  border: 1px solid #e8c6e6;
+  border-radius: 30px;
+  background: linear-gradient(110deg, #ffe0ee, #eadfff);
   color: #805786;
-  font: 10px Arial, sans-serif;
-  letter-spacing: 1.8px;
+  font: 11px Arial, sans-serif;
+  letter-spacing: 1.4px;
   cursor: pointer;
-  box-shadow: 0 5px 20px #b58bc41b;
-  transition: transform .25s, box-shadow .25s;
+  box-shadow: 0 7px 20px #c99acb2b;
+  transition: transform .25s ease, box-shadow .25s ease;
 }
 
-button:active {
-  transform: scale(.96);
-  box-shadow: 0 0 18px #c99cde66;
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px #c99acb55;
 }
 
-/* Music disc */
-.disc {
-  width: 76px;
-  height: 76px;
-  margin: 20px auto;
-  display: grid;
-  place-items: center;
-  border: 1px solid #d9b6e1;
+button:active { transform: scale(.97); }
+
+.back-button {
+  background: #fff9fbdc;
+  margin-right: 6px;
+}
+
+.heart {
+  color: #d88dbb;
+  font-size: 20px;
+  animation: heartBeat 2.3s ease-in-out infinite;
+  display: inline-block;
+}
+
+@keyframes heartBeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+/* PAGE 2: OPENING LETTER */
+.letter-scene {
+  perspective: 1000px;
+  width: 100%;
+  max-width: 320px;
+  margin: 24px auto 10px;
+}
+
+.envelope {
+  height: 175px;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+  filter: drop-shadow(0 10px 12px #bd8bb533);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.envelope-base {
+  position: absolute;
+  inset: 30px 0 0;
+  background: linear-gradient(140deg, #f6bfdc, #e6cafa);
+  border-radius: 5px 5px 13px 13px;
+  overflow: hidden;
+}
+
+.envelope-base::before,
+.envelope-base::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.envelope-base::before {
+  left: 0;
+  border-width: 112px 160px 0 0;
+  border-color: #efb4d5 transparent transparent transparent;
+}
+
+.envelope-base::after {
+  right: 0;
+  border-width: 112px 0 0 160px;
+  border-color: transparent transparent transparent #e0bceF;
+}
+
+.envelope-flap {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 160px solid transparent;
+  border-right: 160px solid transparent;
+  border-top: 100px solid #f9d4e8;
+  transform-origin: top center;
+  transition: transform .8s ease;
+  z-index: 4;
+}
+
+.seal {
+  position: absolute;
+  top: 85px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 39px;
+  height: 39px;
   border-radius: 50%;
-  background: linear-gradient(145deg, #fff8fd, #e7d7ff);
-  box-shadow: 0 0 25px #caa4e644;
-  font-size: 28px;
-  color: #9a76ab;
-  animation: spin 12s linear infinite;
+  background: #fff0f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c77eac;
+  font-size: 22px;
+  box-shadow: 0 3px 9px #b57aa333;
+  z-index: 5;
+  transition: opacity .35s ease;
+}
+
+.letter-paper {
+  position: absolute;
+  left: 5%;
+  top: 10px;
+  width: 90%;
+  min-height: 150px;
+  padding: 20px 17px;
+  background: #fffdf8;
+  border: 1px solid #f2dce9;
+  border-radius: 7px;
+  box-shadow: 0 4px 15px #b47ca322;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: transform 1s ease, opacity .6s ease;
+}
+
+.letter-paper .tiny-note {
+  font-size: 12px;
+  color: #9c7aa0;
+  line-height: 1.8;
+}
+
+.envelope.open .envelope-flap {
+  transform: rotateX(180deg);
+  z-index: 1;
+}
+
+.envelope.open .seal { opacity: 0; }
+
+.envelope.open .letter-paper {
+  opacity: 1;
+  transform: translateY(-42px);
+  transition-delay: .25s;
+}
+
+.tap-hint {
+  font: 10px Arial, sans-serif;
+  letter-spacing: 1.6px;
+  color: #b18bb2;
+  margin: 10px 0 0;
+}
+
+.note-content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 1s ease, opacity .8s ease;
+}
+
+.note-content.revealed {
+  max-height: 520px;
+  opacity: 1;
+}
+
+.note-text {
+  font-size: 15px;
+  line-height: 2;
+  color: #8c6b91;
+}
+
+.signature {
+  margin-top: 18px;
+  font-size: 19px;
+  color: #b17db0;
+  font-style: italic;
+}
+
+/* PAGE 3: MUSIC */
+.music-disc {
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  margin: 19px auto;
+  background: repeating-radial-gradient(
+    circle, #c5a8df 0, #c5a8df 2px,
+    #ead9f6 3px, #ead9f6 5px
+  );
+  border: 7px solid #f5e6f4;
+  box-shadow: 0 0 25px #c4a1dd77;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: spin 8s linear infinite;
+}
+
+.music-disc span {
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  background: #fff8fd;
+  border: 1px solid #d6b8e4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
 }
 
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
 
-.player {
+.song-frame {
   width: 100%;
-  aspect-ratio: 16 / 9;
-  margin-top: 22px;
+  margin: 20px auto 8px;
+  border-radius: 15px;
   overflow: hidden;
-  border-radius: 14px;
-  border: 1px solid #ffffffc9;
-  background: #e7d8f1;
-  box-shadow: 0 8px 25px #8f6da72b;
+  border: 1px solid #ead2ec;
+  background: #f8eaf8;
+  box-shadow: 0 8px 22px #b88db52b;
 }
 
-.player iframe {
+.song-frame iframe {
   display: block;
   width: 100%;
-  height: 100%;
+  aspect-ratio: 16 / 9;
   border: 0;
 }
 
-.back {
-  background: transparent;
-  border-color: transparent;
-  box-shadow: none;
-  margin-top: 10px;
+.small-note {
+  font-size: 12px;
+  line-height: 1.8;
 }
 
-.footer {
-  margin-top: 26px;
-  font: 9px Arial, sans-serif;
-  letter-spacing: 1.8px;
-  color: #a688ad;
+footer {
+  margin-top: 24px;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: #b092b2;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: .01ms !important;
-    animation-iteration-count: 1 !important;
+@media (max-width: 360px) {
+  .card { padding: 28px 17px; }
+  .envelope-flap {
+    border-left-width: 140px;
+    border-right-width: 140px;
   }
+  .envelope-base::before { border-width: 112px 140px 0 0; }
+  .envelope-base::after { border-width: 112px 0 0 140px; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- PAGE ONE -->
-<section class="page" id="home">
+<!-- PAGE 1: WELCOME -->
+<section class="page" id="page1">
   <div class="glow pink"></div>
   <div class="glow purple"></div>
 
-  <span class="sparkle s1">✦</span>
-  <span class="sparkle s2">✧</span>
+  <span class="sparkle s1">✧</span>
+  <span class="sparkle s2">✦</span>
   <span class="sparkle s3">✧</span>
   <span class="sparkle s4">✦</span>
-  <span class="sparkle s5">·</span>
-  <span class="sparkle s6">✧</span>
-
+  <span class="sparkle s5">✧</span>
+  <span class="sparkle s6">✦</span>
   <span class="petal p1">🌸</span>
-  <span class="petal p2">✿</span>
-  <span class="petal p3">🌸</span>
+  <span class="petal p2">♡</span>
+  <span class="petal p3">🌷</span>
   <span class="petal p4">✿</span>
 
   <main class="card">
     <div class="eyebrow">A LITTLE SOMETHING FOR YOU</div>
-
-    <div class="divider"></div>
-
-    <h1>
-      Some things are<br>
-      better left<br>
-      unspoken…
-    </h1>
+    <h1>Hey, Jayasree <span class="heart">♡</span></h1>
 
     <p>
-      But sometimes, a song says it<br>
-      just right. 🦋
+      Some things are better left unspoken…<br>
+      But sometimes, a song says it just right. 🦋
     </p>
 
     <div class="divider"></div>
 
-    <button onclick="showMusic()">
-      LISTEN TO THIS ♡ →
+    <p>A tiny little corner of the world, just for you. ✨</p>
+
+    <button onclick="goToPage(2)">
+      OPEN THIS LITTLE SURPRISE ♡ →
     </button>
 
-    <div class="footer">JUST A LITTLE MOMENT · 01</div>
+    <footer>MADE WITH A LITTLE EXTRA THOUGHT 🌷</footer>
   </main>
 </section>
 
-<!-- PAGE TWO -->
-<section class="page" id="music">
+<!-- PAGE 2: SEPARATE NOTE + OPENING LETTER -->
+<section class="page hidden" id="page2">
   <div class="glow pink"></div>
   <div class="glow purple"></div>
 
-  <span class="sparkle s1">✦</span>
-  <span class="sparkle s2">✧</span>
+  <span class="sparkle s1">✧</span>
+  <span class="sparkle s2">✦</span>
   <span class="sparkle s3">✧</span>
   <span class="sparkle s4">✦</span>
-  <span class="sparkle s5">·</span>
+  <span class="sparkle s5">♡</span>
   <span class="sparkle s6">✧</span>
-
   <span class="petal p1">🌸</span>
-  <span class="petal p2">✿</span>
-  <span class="petal p3">🌸</span>
+  <span class="petal p2">🦋</span>
+  <span class="petal p3">🌷</span>
   <span class="petal p4">✿</span>
 
   <main class="card">
-    <div class="eyebrow">A LITTLE MELODY ♫</div>
+    <div class="eyebrow">A LITTLE NOTE, JUST FOR YOU 🦋</div>
+    <h1>A tiny thought… ♡</h1>
+    <p>Some words are easier to write than to say. ✨</p>
 
-    <h1>For you,<br>Jayasree. ♡</h1>
+    <div class="letter-scene">
+      <div class="envelope" id="envelope"
+           role="button" tabindex="0"
+           aria-label="Open the letter"
+           onclick="openLetter()"
+           onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLetter();}">
+        <div class="letter-paper">
+          <div class="tiny-note">
+            For Jayasree 🌷<br>
+            A little something from my heart…
+          </div>
+        </div>
+        <div class="envelope-base"></div>
+        <div class="envelope-flap"></div>
+        <div class="seal">♡</div>
+      </div>
+      <div class="tap-hint" id="tapHint">TAP THE LITTLE LETTER TO OPEN ✨</div>
+    </div>
 
-    <div class="disc">♫</div>
+    <div class="note-content" id="noteContent">
+      <div class="divider"></div>
+
+      <div class="note-text">
+        Hey Jayasree, 💗<br><br>
+
+        I don't really know how to put this into words,
+        but there's something about you that makes an
+        ordinary moment feel a little more special. 🦋✨<br><br>
+
+        Maybe it's your smile, maybe it's your eyes,
+        or maybe it's just the way you are. 🌷<br><br>
+
+        I just wanted to leave this tiny note here,
+        with no pressure and no expectations.
+        Take it slowly, smile a little, and keep being
+        the lovely person you are. ♡🌙<br><br>
+
+        And if these little pages make you smile even
+        for a second, that would mean a lot to me. ✨🦋
+      </div>
+
+      <div class="signature">A little thought, just for you ♡</div>
+    </div>
+
+    <button class="back-button" onclick="goToPage(1)">
+      ← BACK
+    </button>
+    <button onclick="goToPage(3)">
+      ONE LAST LITTLE THING 🎧 →
+    </button>
+
+    <footer>SEALED WITH A LITTLE SPARKLE ✧</footer>
+  </main>
+</section>
+
+<!-- PAGE 3: MUSIC -->
+<section class="page hidden" id="page3">
+  <div class="glow pink"></div>
+  <div class="glow purple"></div>
+
+  <span class="sparkle s1">✧</span>
+  <span class="sparkle s2">✦</span>
+  <span class="sparkle s3">♡</span>
+  <span class="sparkle s4">✦</span>
+  <span class="sparkle s5">✧</span>
+  <span class="sparkle s6">✦</span>
+  <span class="petal p1">🌸</span>
+  <span class="petal p2">♡</span>
+  <span class="petal p3">🌷</span>
+  <span class="petal p4">🦋</span>
+
+  <main class="card">
+    <div class="eyebrow">A SONG FOR YOU, JAYASREE ♡</div>
+    <h1>Just press play… 🎧</h1>
+
+    <div class="music-disc">
+      <span>♫</span>
+    </div>
 
     <p>
-      This is how my earphones sound<br>
-      whenever I see your eyes. ♡
+      This is how my earphones sound whenever I see your eyes. 🦋✨
     </p>
 
     <div class="divider"></div>
 
-    <p>
-      Just a song, and a little thought. 🌷
+    <p class="small-note">
+      No big words… just a song and a little thought. 🌷
     </p>
 
-    <div class="player">
+    <div class="song-frame">
       <iframe
-        src="https://www.youtube.com/embed/GTUwasMHsuU"
-        title="A little melody for you"
+        src="https://www.youtube-nocookie.com/embed/AB2ACJ22fhY"
+        title="A song for Jayasree"
         loading="lazy"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin"
@@ -363,27 +603,52 @@ button:active {
       </iframe>
     </div>
 
-    <button class="back" onclick="showHome()">← BACK</button>
+    <p class="small-note">
+      Tap play above and enjoy the song. ♡
+    </p>
 
-    <div class="footer">JUST A LITTLE MOMENT · 02</div>
+    <button class="back-button" onclick="goToPage(2)">
+      ← BACK TO YOUR NOTE
+    </button>
+
+    <button onclick="goToPage(1)">
+      BACK TO THE BEGINNING 🌸
+    </button>
+
+    <footer>JUST A LITTLE SONG, JUST FOR YOU ✧</footer>
   </main>
 </section>
 
 <script>
-function showMusic() {
-  document.getElementById("home").style.display = "none";
-  document.getElementById("music").style.display = "flex";
-  window.scrollTo(0, 0);
+function goToPage(number) {
+  document.querySelectorAll(".page").forEach(function(page) {
+    page.classList.add("hidden");
+  });
+
+  const selectedPage = document.getElementById("page" + number);
+  selectedPage.classList.remove("hidden");
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-function showHome() {
-  document.getElementById("music").style.display = "none";
-  document.getElementById("home").style.display = "flex";
-  window.scrollTo(0, 0);
+let letterOpened = false;
+
+function openLetter() {
+  if (letterOpened) return;
+  letterOpened = true;
+
+  const envelope = document.getElementById("envelope");
+  const note = document.getElementById("noteContent");
+  const hint = document.getElementById("tapHint");
+
+  envelope.classList.add("open");
+  hint.textContent = "A LITTLE NOTE FOR YOU ♡";
+
+  window.setTimeout(function() {
+    note.classList.add("revealed");
+  }, 650);
 }
 </script>
 
 </body>
 </html>
-
-
